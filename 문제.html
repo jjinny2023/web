@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+<input type="button" value="exam1" onclick="f_ex1()">
+<input type="button" value="exam2" onclick="f_ex2()">
+<input type="button" value="exam3" onclick="f_ex3()">
+<input type="button" value="exam4" onclick="f_ex4()">
+<input type="button" value="exam5" onclick="f_ex5()">
+<input type="button" value="exam6" onclick="f_ex6()">
+
+<div></div>
+
+<script>
+// 1. 1부터 10까지의 합을 구하는 프로그램을 작성하시오
+let v_disp = document.querySelector('div');
+let sum=0;
+
+function f_ex1(){
+ 
+    for(var i=1; i<=10; i++){
+        sum +=i;
+    }
+    v_disp.innerText =sum;
+}
+//2. 1부터 200까지의 짝수의 합을 구하는 프로그램 작성
+function f_ex2(){
+    
+    for(var i=1; i<=200; i++){
+        if(i%2==0){
+            sum +=i;
+        }
+    }
+    v_disp.innerText =sum;   
+}
+//3. 사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지
+//      누적된 값을 출력하는 프로그램
+function f_ex3(){
+    
+    let v_input = parseInt(prompt("숫자를 입력하세요"));
+    if(v_input !=0){    
+        sum +=v_input;
+        return f_ex3();
+    } else {
+        v_disp.innerText =sum; 
+        return;
+    }
+     
+}
+//4. 다중 for문을 이용해서 1~10까지 중 i와 k의 더한 합이 3의 배수일때만 출력
+function f_ex4() {
+    for(var i=1; i<=10; i++){
+        for(var j=1; j<=10; j++){
+            if(((i+j)%3)==0){
+                v_disp.innerText =i+j; 
+            }
+        } continue;
+    }
+
+
+}
+//5. 1~100까지 중 2의 배수이면서 3의 배수인 것만 출력(continue이용)
+
+//6. 두 수를 입력(prompt) 두 수의 합이 100이상일때만 출력
+// (continue이용, 두수 모두 0ㅇ이 입력되면 종료)
+
+</script>
+</body>
+</html>
